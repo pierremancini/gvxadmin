@@ -3,6 +3,7 @@
 GenVarXplorer administration interface.
 
 Manage:
+
 - users
 - protocols (projects)
 - templates and configuration files
