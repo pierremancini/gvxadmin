@@ -10,6 +10,24 @@
 
     <link rel="stylesheet" href="{{ url_for('static', filename='code/css/jsoneditor.css') }}">
 
+    <style type="text/css">
+
+      div.jsoneditor {
+        // Override css du jsoneditor pour avoir une fenetre scrollable.
+        color: #1A1A1A;
+        border: 1px solid #3883fa;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        width: 100%;
+        height: 500px;
+        position: relative;
+        padding: 0;
+        line-height: 100%;
+      }
+
+    </style>
+
     <script src="{{ url_for('static', filename='code/js/jsoneditor.js') }}"></script>
 
     <script>
