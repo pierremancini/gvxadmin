@@ -4,3 +4,5 @@ syntax: glob
 *.log
 *.pyc
 data/
+*.min.js*
+*.min.css*
