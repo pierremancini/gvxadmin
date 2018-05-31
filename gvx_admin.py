@@ -43,7 +43,7 @@ class BaseConfig(object):
         'samples': 'sqlite:///gvx_samples_catalog.sqlite'
     }
     HTML_TEMPLATE_PATH = ''
-    JSON_CONFIG_PATH = ''
+    JSON_CONFIG_PATH = '/home/pmancini/Code/gvxadmin/data'
     BAM_FILES_PATH = ''
     EXPORT_PATH = ''
     LINKED_DATA_PATH = ''
@@ -125,6 +125,9 @@ class ProtocolModelView(ModelView):
     #@action('edit_config', 'Edit config', 'Are you sure you want to copy selected protocol?')
     #def action_copy(self, ids):
         #print(ids)
+
+    edit_template = 'protocol_json_edit.html'
+
 
     form_create_rules = ('name', 'users', 'config_source', 'template_source')
     form_edit_rules = ('name', 'users', 'config_json', 'template_qc', 'template_var', 'template_cst', 'template_cnv', 'template_fus')
@@ -232,7 +235,6 @@ class SamplesModelView(ModelView):
         flash("data table for %s from %s has been successfully deleted" % (model.sample_name, model.sample_category), 'info')
 
         # TODO: Manage absent table : OperationalError: (sqlite3.OperationalError) no such table: SARC3-001H_CNV [SQL: u'\nDROP TABLE "SARC3-001H_CNV"']
-
 
 admin = Admin(app, name='GVX Admin', template_mode='bootstrap2')
 admin.add_view(ModelView(User, db.session))

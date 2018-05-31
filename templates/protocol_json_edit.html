@@ -1,0 +1,75 @@
+{% extends 'admin/model/edit.html' %}
+
+{% block body %}
+
+    {{ super() }}
+
+
+<!--     <script src="{{ url_for('static', filename='graphic/js/jsoneditor.js') }}"></script> -->
+
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='code/css/jsoneditor.css') }}">
+
+    <script src="{{ url_for('static', filename='code/js/jsoneditor.js') }}"></script>
+
+    <script>
+
+      var schema = {
+        "title": "Example Schema",
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "gender": {
+            "enum": ["male", "female"]
+          },
+          "age": {
+            "description": "Age in years",
+            "type": "integer",
+            "minimum": 0
+          },
+          "job": {
+            "$ref": "job"
+          }
+        },
+        "required": ["firstName", "lastName", "gender"]
+      };
+
+      var job = {
+        "title": "Job description",
+        "type": "object",
+        "properties": {
+          "company": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          }
+        }
+      };
+
+      var json = {
+        firstName: 'John',
+        lastName: 'Doe',
+        age: 28,
+        job: {
+          company: 'freelance',
+          role: 'developer'
+        }
+      };
+
+      var options = {
+        schema: schema,
+        schemaRefs: {"job": job}
+      };
+
+      // create the editor
+      var container = document.getElementById('config_json').parentNode;
+      var editor = new JSONEditor(container, options, json);
+    </script>
+
+{% endblock %}
