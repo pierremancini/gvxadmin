@@ -52,24 +52,36 @@
         }
       };
 
-      var json = {
-        firstName: 'John',
-        lastName: 'Doe',
-        age: 28,
-        job: {
-          company: 'freelance',
-          role: 'developer'
-        }
-      };
+      function updateConfigField() {
+        document.getElementById('config_json').value = editor.getText();
+
+      }
 
       var options = {
         schema: schema,
-        schemaRefs: {"job": job}
+        schemaRefs: {"job": job},
+        onChange: updateConfigField
       };
 
-      // create the editor
       var container = document.getElementById('config_json').parentNode;
+
+      var json = JSON.parse(document.getElementById('config_json').value);
+
       var editor = new JSONEditor(container, options, json);
+
+
+      document.getElementById('config_json').addEventListener('keyup', updateEditor);
+
+      function updateEditor() {
+
+        console.log('appel')
+        editor.set(JSON.parse(document.getElementById('config_json').value));
+
+      }
+
+
+
+
     </script>
 
 {% endblock %}
