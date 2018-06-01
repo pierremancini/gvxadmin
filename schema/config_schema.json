@@ -1,0 +1,102 @@
+{
+  "title": "Protocol configuration",
+  "type": "object",
+  "properties": {
+    "caseData_url": {
+      "type": "string"
+    },
+    "columns_order": {
+      "type": "object",
+      "properties": {
+      },
+      "additionalProperties": { "type": "array" }
+    },
+    "custom_sort": {
+      "type": "object",
+      "properties": {
+      },
+      "additionalProperties": { "type": "array" }
+    },
+    "default_work_env": {
+      "type": "object",
+      "properties": {
+      },
+      "additionalProperties": { "type": "string" }
+    },
+    "publish_name_template": {
+      "type": "string"
+    },
+    "publish_name_date_format": {
+      "type": "string"
+    },
+    "data_session_url": {
+      "type": "string"
+    },
+    "data_files_url": {
+      "type": "string"
+    },
+    "data_files_url_parametric": {
+      "type": "string"
+    },
+    "data_types_suffix": {
+      "type": "object",
+      "properties": {
+      },
+      "additionalProperties": { "type": "string" }
+    },
+    "entry_point": {
+      "type": "string"
+    },
+    "editable_fields": {
+      "type": "object",
+      "additionalProperties": { 
+        "type": "object",
+        "properties": {
+          "label": {"type": "string"},
+          "name": {"type": "string"},
+          "options": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "flag_fields": {
+      "type": "object"
+    },
+    "linked_data": {
+      "type": "object"
+    },
+    "queries": {
+      "type": "object"
+    },
+    "filters": {
+      "type": "object"
+    },
+    "col_views": {
+      "type": "object"
+    },
+    "col_map": {
+      "type": "object"
+    },
+    "table_schema": {
+      "type": "object"
+    },
+    "work_envs": {
+      "type": "object"
+    },
+    "col_classes": {
+      "type": "object"
+    }
+  }
+}
