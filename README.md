@@ -17,6 +17,19 @@ Manage:
 pip install -r requirements.txt
 ```
 
+- From [JSON editor](https://github.com/josdejong/jsoneditor) get jsoneditor-icons.svg, jsoneditor.css, jsoneditor.js files and put them in static folder as :
+
+
+``` bash
+/static/
+|-- css
+|   |-- img
+|   |   |-- jsoneditor-icons.svg
+|   |-- jsoneditor.css
+|-- js
+|   |-- jsoneditor.js
+```
+
 ## Configuration
 
 Configure options in a *gvx_admin.cfg* by setting options as declared in the *BaseConfig* class of the *gvx_admin.py* file.
