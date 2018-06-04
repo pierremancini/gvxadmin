@@ -86,6 +86,7 @@
       var json = JSON.parse(document.getElementById('config_json').value);
 
       var editor = new JSONEditor(container, options, json);
+      editor.setName('Config JSON')
 
 
       document.getElementById('config_json').addEventListener('keyup', updateEditor);
