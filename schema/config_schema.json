@@ -103,31 +103,6 @@
       }
     },
 
-    "group": {
-      "id" : "group",
-      "type": "object",
-      "properties": {
-        "operator": {
-          "type": "string"
-        },
-        "rules": {
-          "type": "array",
-          "items": {
-            "conditions": {
-              "type": "string"
-            },
-            "field": {
-              "type": "string"
-            },
-            "data": {
-              "type": "string"
-            },
-            "$ref": "group"
-          }
-        }
-      }
-    },
-
     "queries": {
       "type": "object",
       "additionalProperties": {
