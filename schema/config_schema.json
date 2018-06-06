@@ -1,4 +1,5 @@
 {
+  "$schema": "http://json-schema.org/draft-04/schema#",
   "title": "Protocol configuration",
   "type": "object",
   "properties": {
@@ -36,7 +37,7 @@
       "type": "string"
     },
     "data_files_url_parametric": {
-      "type": "string"
+      "type": "integer"
     },
     "data_types_suffix": {
       "type": "object",
@@ -47,23 +48,27 @@
     "entry_point": {
       "type": "string"
     },
+
     "editable_fields": {
       "type": "object",
-      "additionalProperties": { 
-        "type": "object",
-        "properties": {
-          "label": {"type": "string"},
-          "name": {"type": "string"},
-          "options": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "value": {
-                  "type": "string"
-                },
-                "label": {
-                  "type": "string"
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "label": {"type": "string"},
+            "name": {"type": "string"},
+            "options": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "string"
+                  },
+                  "label": {
+                    "type": "string"
+                  }
                 }
               }
             }
@@ -71,32 +76,146 @@
         }
       }
     },
+
     "flag_fields": {
-      "type": "object"
+        "type": "object",
+        "additionalProperties": {
+          "type": "object"
+        }
     },
     "linked_data": {
-      "type": "object"
+      "type": "object",
+      "additionalProperties": { 
+        "type": "object",
+        "properties": {
+          "link_fields": {
+            "type": "array"
+          },
+          "table_name_format": {
+            "type": "string"
+          },
+          "graph_display_default": {
+            "type": "boolean" 
+          },
+          "graph_name_format": {
+            "type": "string"
+          }
+        }
+      }
     },
+
+    "group": {
+      "id" : "group",
+      "type": "object",
+      "properties": {
+        "operator": {
+          "type": "string"
+        },
+        "rules": {
+          "type": "array",
+          "items": {
+            "conditions": {
+              "type": "string"
+            },
+            "field": {
+              "type": "string"
+            },
+            "data": {
+              "type": "string"
+            },
+            "$ref": "group"
+          }
+        }
+      }
+    },
+
     "queries": {
-      "type": "object"
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "query": {
+              "$ref": "group"
+            }
+          }
+        }
+      }
     },
     "filters": {
-      "type": "object"
     },
     "col_views": {
-      "type": "object"
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "columns": {
+              "type": "array"
+            }
+          }
+        }
+      }
     },
     "col_map": {
-      "type": "object"
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
     },
     "table_schema": {
-      "type": "object"
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "additionalProperties": {
+            "type": ["string", "boolean"]
+          }
+        }
+      }
     },
     "work_envs": {
-      "type": "object"
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": ["string", "null"]
+            },
+            "query": {
+              "type": ["string", "null"]
+            },
+            "sort": {
+              "type": ["array", "null"]
+            },
+            "view": {
+              "type": ["string", "null"]
+            }
+          }
+        }
+      }
     },
     "col_classes": {
-      "type": "object"
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "className": {
+            "type": "string"
+          }
+        }
+      }
     }
   }
 }
