@@ -31,36 +31,22 @@
       "type": "object",
       "properties": {
         "qc": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+          "$ref": "#/definitions/data_type/columns_order"
         },
         "var":  {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+          "$ref": "#/definitions/data_type/columns_order"
         },
         "cnv": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+          "$ref": "#/definitions/data_type/columns_order"
         },
         "fus": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+          "$ref": "#/definitions/data_type/columns_order"
         },
         "cst": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+          "$ref": "#/definitions/data_type/columns_order"
         }
-      }
+      },
+      "additionalProperties": false
     },
     "custom_sort": {
       "type": "object",
@@ -72,21 +58,22 @@
       "type": "object",
       "properties": {
         "qc": {
-          "type": "string"
+          "$ref": "#/definitions/data_type/default_work_env"
         },
         "var":  {
-          "type": "string"
+          "$ref": "#/definitions/data_type/default_work_env"
         },
         "cnv": {
-          "type": "string"
+          "$ref": "#/definitions/data_type/default_work_env"
         },
         "fus": {
-          "type": "string"
+          "$ref": "#/definitions/data_type/default_work_env"
         },
         "cst": {
-          "type": "string"
+          "$ref": "#/definitions/data_type/default_work_env"
         }
-      }
+      },
+      "additionalProperties": false
     },
 
     "publish_name_template": {
@@ -119,253 +106,66 @@
       "type": "object",
       "properties": {
         "qc": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "label": {"type": "string"},
-              "name": {"type": "string"},
-              "options": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "value": {
-                      "type": "string"
-                    },
-                    "label": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          }
+          "$ref": "#/definitions/data_type/editable_fields"
         },
         "var":  {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "label": {"type": "string"},
-              "name": {"type": "string"},
-              "options": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "value": {
-                      "type": "string"
-                    },
-                    "label": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          }
+          "$ref": "#/definitions/data_type/editable_fields"
         },
         "cnv": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "label": {"type": "string"},
-              "name": {"type": "string"},
-              "options": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "value": {
-                      "type": "string"
-                    },
-                    "label": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          }
+          "$ref": "#/definitions/data_type/editable_fields"
         },
         "fus": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "label": {"type": "string"},
-              "name": {"type": "string"},
-              "options": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "value": {
-                      "type": "string"
-                    },
-                    "label": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          }
+          "$ref": "#/definitions/data_type/editable_fields"
         },
         "cst":{
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "label": {"type": "string"},
-              "name": {"type": "string"},
-              "options": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "value": {
-                      "type": "string"
-                    },
-                    "label": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          }
+          "$ref": "#/definitions/data_type/editable_fields"
         }
-      }
+      },
+      "additionalProperties": false
     },
 
     "flag_fields": {
       "type": "object",
       "properties": {
         "qc": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          }
+          "$ref": "#/definitions/data_type/flag_fields"
         },
         "var": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          }
+          "$ref": "#/definitions/data_type/flag_fields"
         },
         "cnv": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          }
+          "$ref": "#/definitions/data_type/flag_fields"
         },
         "fus": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          }
+          "$ref": "#/definitions/data_type/flag_fields"
         },
         "cst": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          }
+          "$ref": "#/definitions/data_type/flag_fields"
         }
-      }
+      },
+      "additionalProperties": false
     },
 
     "linked_data": {
       "type": "object",
       "properties": {
         "qc": {
-          "type": "object",
-          "properties": {
-            "link_fields": {
-              "type": "array"
-            },
-            "table_name_format": {
-              "type": "string"
-            },
-            "graph_display_default": {
-              "type": "boolean" 
-            },
-            "graph_name_format": {
-              "type": "string"
-            }
-          }
+          "$ref": "#/definitions/data_type/linked_data"
         },
         "var": {
-          "type": "object",
-          "properties": {
-            "link_fields": {
-              "type": "array"
-            },
-            "table_name_format": {
-              "type": "string"
-            },
-            "graph_display_default": {
-              "type": "boolean" 
-            },
-            "graph_name_format": {
-              "type": "string"
-            }
-          }
+          "$ref": "#/definitions/data_type/linked_data"
         },
         "cnv": {
-          "type": "object",
-          "properties": {
-            "link_fields": {
-              "type": "array"
-            },
-            "table_name_format": {
-              "type": "string"
-            },
-            "graph_display_default": {
-              "type": "boolean" 
-            },
-            "graph_name_format": {
-              "type": "string"
-            }
-          }
+          "$ref": "#/definitions/data_type/linked_data"
         },
         "fus": {
-          "type": "object",
-          "properties": {
-            "link_fields": {
-              "type": "array"
-            },
-            "table_name_format": {
-              "type": "string"
-            },
-            "graph_display_default": {
-              "type": "boolean" 
-            },
-            "graph_name_format": {
-              "type": "string"
-            }
-          }
+          "$ref": "#/definitions/data_type/linked_data"
         },
         "cst": {
-          "type": "object",
-          "properties": {
-            "link_fields": {
-              "type": "array"
-            },
-            "table_name_format": {
-              "type": "string"
-            },
-            "graph_display_default": {
-              "type": "boolean" 
-            },
-            "graph_name_format": {
-              "type": "string"
-            }
-          }
+          "$ref": "#/definitions/data_type/linked_data"
         }
-      }
+      },
+      "additionalProperties": false
     },
 
     "queries": {
@@ -397,76 +197,22 @@
       "type": "object",
       "properties": {
         "qc": {
-          "type": "array",
-          "items": {
-            "name": {
-              "type": "string",
-            },
-            "columns": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            }
-          }
+          "$ref": "#/definitions/data_type/col_views"
         },
         "var": {
-          "type": "array",
-          "items": {
-            "name": {
-              "type": "string",
-            },
-            "columns": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            }
-          }
+          "$ref": "#/definitions/data_type/col_views"
         },
         "cnv": {
-          "type": "array",
-          "items": {
-            "name": {
-              "type": "string",
-            },
-            "columns": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            }
-          }
+          "$ref": "#/definitions/data_type/col_views"
         },
         "fus": {
-          "type": "array",
-          "items": {
-            "name": {
-              "type": "string",
-            },
-            "columns": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            }
-          }
+          "$ref": "#/definitions/data_type/col_views"
         },
         "cst": {
-          "type": "array",
-          "items": {
-            "name": {
-              "type": "string",
-            },
-            "columns": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            }
-          }
+          "$ref": "#/definitions/data_type/col_views"
         }
-      }
+      },
+      "additionalProperties": false
     },
 
     "col_map": {
@@ -502,136 +248,22 @@
       "type": "object",
       "properties": {
         "qc": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": ["string", "null"]
-              },
-              "query": {
-                "type": ["string", "null"]
-              },
-              "sort": {
-                "type": ["array", "null"],
-                "items": {
-                  "type": "array",
-                  "items": {
-                    "type": ["string", "integer"]
-                  }
-                }
-              },
-              "view": {
-                "type": ["string", "null"]
-              }
-            }
-          }
+          "$ref": "#/definitions/data_type/work_envs"
         },
         "var": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": ["string", "null"]
-              },
-              "query": {
-                "type": ["string", "null"]
-              },
-              "sort": {
-                "type": ["array", "null"],
-                "items": {
-                  "type": "array",
-                  "items": {
-                    "type": ["string", "integer"]
-                  }
-                }
-              },
-              "view": {
-                "type": ["string", "null"]
-              }
-            }
-          }
+          "$ref": "#/definitions/data_type/work_envs"
         },
         "cnv": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": ["string", "null"]
-              },
-              "query": {
-                "type": ["string", "null"]
-              },
-              "sort": {
-                "type": ["array", "null"],
-                "items": {
-                  "type": "array",
-                  "items": {
-                    "type": ["string", "integer"]
-                  }
-                }
-              },
-              "view": {
-                "type": ["string", "null"]
-              }
-            }
-          }
+          "$ref": "#/definitions/data_type/work_envs"
         },
         "fus": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": ["string", "null"]
-              },
-              "query": {
-                "type": ["string", "null"]
-              },
-              "sort": {
-                "type": ["array", "null"],
-                "items": {
-                  "type": "array",
-                  "items": {
-                    "type": ["string", "integer"]
-                  }
-                }
-              },
-              "view": {
-                "type": ["string", "null"]
-              }
-            }
-          }
+          "$ref": "#/definitions/data_type/work_envs"
         },
         "cst": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": ["string", "null"]
-              },
-              "query": {
-                "type": ["string", "null"]
-              },
-              "sort": {
-                "type": ["array", "null"],
-                "items": {
-                  "type": "array",
-                  "items": {
-                    "type": ["string", "integer"]
-                  }
-                }
-              },
-              "view": {
-                "type": ["string", "null"]
-              }
-            }
-          }
+          "$ref": "#/definitions/data_type/work_envs"
         }
-      }    
+      },
+      "additionalProperties": false
     },
 
     "col_classes": {
@@ -692,6 +324,110 @@
     },
 
     "data_type": {
+
+      "columns_order": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+
+      "default_work_env": {
+        "type": "string"
+      },
+
+      "editable_fields": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "label": {"type": "string"},
+            "name": {"type": "string"},
+            "options": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "string"
+                  },
+                  "label": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+
+      "flag_fields": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      },
+
+      "linked_data": {
+        "type": "object",
+        "properties": {
+          "link_fields": {
+            "type": "array"
+          },
+          "table_name_format": {
+            "type": "string"
+          },
+          "graph_display_default": {
+            "type": "boolean" 
+          },
+          "graph_name_format": {
+            "type": "string"
+          }
+        }
+      },
+
+      "col_views": {
+        "type": "array",
+        "items": {
+          "name": {
+            "type": "string",
+          },
+          "columns": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+
+      "work_envs": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": ["string", "null"]
+            },
+            "query": {
+              "type": ["string", "null"]
+            },
+            "sort": {
+              "type": ["array", "null"],
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": ["string", "integer"]
+                }
+              }
+            },
+            "view": {
+              "type": ["string", "null"]
+            }
+          }
+        }
+      },
+
       "queries": {
         "type": "array",
         "items": {
