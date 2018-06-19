@@ -1,0 +1,737 @@
+{
+  "title": "Protocol configuration",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["caseData_url",
+    "columns_order", 
+    "custom_sort",
+    "default_work_env",
+    "publish_name_date_format",
+    "data_session_url",
+    "data_files_url",
+    "data_files_url_parametric",
+    "data_types_suffix",
+    "entry_point",
+    "editable_fields",
+    "flag_fields",
+    "linked_data",
+    "queries",
+    "filters",
+    "col_views",
+    "col_map",
+    "table_schema",
+    "work_envs",
+    "col_classes"
+  ],
+  "properties": {
+    "caseData_url": {
+      "type": "string"
+    },
+    "columns_order": {
+      "type": "object",
+      "properties": {
+        "qc": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "var":  {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "cnv": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "fus": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "cst": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "custom_sort": {
+      "type": "object",
+      "properties": {
+      },
+      "additionalProperties": { "type": "array" }
+    },
+    "default_work_env": {
+      "type": "object",
+      "properties": {
+        "qc": {
+          "type": "string"
+        },
+        "var":  {
+          "type": "string"
+        },
+        "cnv": {
+          "type": "string"
+        },
+        "fus": {
+          "type": "string"
+        },
+        "cst": {
+          "type": "string"
+        }
+      }
+    },
+
+    "publish_name_template": {
+      "type": "string"
+    },
+
+    "publish_name_date_format": {
+      "type": "string"
+    },
+    "data_session_url": {
+      "type": "string"
+    },
+    "data_files_url": {
+      "type": "string"
+    },
+    "data_files_url_parametric": {
+      "type": "integer",
+      "enum": [0, 1]
+    },
+    "data_types_suffix": {
+      "type": "object",
+      "properties": {
+      },
+      "additionalProperties": { "type": "string" }
+    },
+    "entry_point": {
+      "type": "string"
+    },
+    "editable_fields": {
+      "type": "object",
+      "properties": {
+        "qc": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {"type": "string"},
+              "name": {"type": "string"},
+              "options": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "type": "string"
+                    },
+                    "label": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "var":  {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {"type": "string"},
+              "name": {"type": "string"},
+              "options": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "type": "string"
+                    },
+                    "label": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "cnv": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {"type": "string"},
+              "name": {"type": "string"},
+              "options": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "type": "string"
+                    },
+                    "label": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "fus": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {"type": "string"},
+              "name": {"type": "string"},
+              "options": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "type": "string"
+                    },
+                    "label": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "cst":{
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {"type": "string"},
+              "name": {"type": "string"},
+              "options": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "type": "string"
+                    },
+                    "label": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "flag_fields": {
+      "type": "object",
+      "properties": {
+        "qc": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "var": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "cnv": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "fus": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "cst": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
+
+    "linked_data": {
+      "type": "object",
+      "properties": {
+        "qc": {
+          "type": "object",
+          "properties": {
+            "link_fields": {
+              "type": "array"
+            },
+            "table_name_format": {
+              "type": "string"
+            },
+            "graph_display_default": {
+              "type": "boolean" 
+            },
+            "graph_name_format": {
+              "type": "string"
+            }
+          }
+        },
+        "var": {
+          "type": "object",
+          "properties": {
+            "link_fields": {
+              "type": "array"
+            },
+            "table_name_format": {
+              "type": "string"
+            },
+            "graph_display_default": {
+              "type": "boolean" 
+            },
+            "graph_name_format": {
+              "type": "string"
+            }
+          }
+        },
+        "cnv": {
+          "type": "object",
+          "properties": {
+            "link_fields": {
+              "type": "array"
+            },
+            "table_name_format": {
+              "type": "string"
+            },
+            "graph_display_default": {
+              "type": "boolean" 
+            },
+            "graph_name_format": {
+              "type": "string"
+            }
+          }
+        },
+        "fus": {
+          "type": "object",
+          "properties": {
+            "link_fields": {
+              "type": "array"
+            },
+            "table_name_format": {
+              "type": "string"
+            },
+            "graph_display_default": {
+              "type": "boolean" 
+            },
+            "graph_name_format": {
+              "type": "string"
+            }
+          }
+        },
+        "cst": {
+          "type": "object",
+          "properties": {
+            "link_fields": {
+              "type": "array"
+            },
+            "table_name_format": {
+              "type": "string"
+            },
+            "graph_display_default": {
+              "type": "boolean" 
+            },
+            "graph_name_format": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+
+    "queries": {
+      "type": "object",
+      "properties": {
+        "qc": {
+          "$ref": "#/definitions/data_type/queries"
+        },
+        "var": {
+          "$ref": "#/definitions/data_type/queries"
+        },
+        "cnv": {
+          "$ref": "#/definitions/data_type/queries"
+        },
+        "fus": {
+          "$ref": "#/definitions/data_type/queries"
+        },
+        "cst": {
+          "$ref": "#/definitions/data_type/queries"
+        }
+      }
+    },
+
+    "filters": {
+    },
+
+    "col_views": {
+
+      "type": "object",
+      "properties": {
+        "qc": {
+          "type": "array",
+          "items": {
+            "name": {
+              "type": "string",
+            },
+            "columns": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "var": {
+          "type": "array",
+          "items": {
+            "name": {
+              "type": "string",
+            },
+            "columns": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "cnv": {
+          "type": "array",
+          "items": {
+            "name": {
+              "type": "string",
+            },
+            "columns": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "fus": {
+          "type": "array",
+          "items": {
+            "name": {
+              "type": "string",
+            },
+            "columns": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "cst": {
+          "type": "array",
+          "items": {
+            "name": {
+              "type": "string",
+            },
+            "columns": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "col_map": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+
+    "table_schema": {
+      "type": "object",
+      "properties": {
+        "qc": {
+          "$ref": "#/definitions/data_type/table_schema"
+        },
+        "var": {
+          "$ref": "#/definitions/data_type/table_schema"
+        },
+        "cnv": {
+          "$ref": "#/definitions/data_type/table_schema"
+        },
+        "fus": {
+          "$ref": "#/definitions/data_type/table_schema"
+        },
+        "cst": {
+          "$ref": "#/definitions/data_type/table_schema"
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "work_envs": {
+      "type": "object",
+      "properties": {
+        "qc": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": ["string", "null"]
+              },
+              "query": {
+                "type": ["string", "null"]
+              },
+              "sort": {
+                "type": ["array", "null"],
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": ["string", "integer"]
+                  }
+                }
+              },
+              "view": {
+                "type": ["string", "null"]
+              }
+            }
+          }
+        },
+        "var": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": ["string", "null"]
+              },
+              "query": {
+                "type": ["string", "null"]
+              },
+              "sort": {
+                "type": ["array", "null"],
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": ["string", "integer"]
+                  }
+                }
+              },
+              "view": {
+                "type": ["string", "null"]
+              }
+            }
+          }
+        },
+        "cnv": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": ["string", "null"]
+              },
+              "query": {
+                "type": ["string", "null"]
+              },
+              "sort": {
+                "type": ["array", "null"],
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": ["string", "integer"]
+                  }
+                }
+              },
+              "view": {
+                "type": ["string", "null"]
+              }
+            }
+          }
+        },
+        "fus": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": ["string", "null"]
+              },
+              "query": {
+                "type": ["string", "null"]
+              },
+              "sort": {
+                "type": ["array", "null"],
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": ["string", "integer"]
+                  }
+                }
+              },
+              "view": {
+                "type": ["string", "null"]
+              }
+            }
+          }
+        },
+        "cst": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": ["string", "null"]
+              },
+              "query": {
+                "type": ["string", "null"]
+              },
+              "sort": {
+                "type": ["array", "null"],
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": ["string", "integer"]
+                  }
+                }
+              },
+              "view": {
+                "type": ["string", "null"]
+              }
+            }
+          }
+        }
+      }    
+    },
+
+    "col_classes": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "className": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "group": {
+      "type": "object",
+      "properties": {
+        "operator": {
+          "type": "string"
+        },
+        "rules": {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "condition": {
+                    "type": "string",
+                    "enum": ["eq", "ne", "le", "lt", "ge", "gt", "lk", "nl", "in", "ni"]
+                  },
+                  "field": {
+                    "type": "string"
+                  },
+                  "data": {
+                    "type": ["string", "null"]
+                  }
+                },
+                "required": ["condition", "field", "data"],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "group": {
+                      "$ref": "#/definitions/group"
+                    }
+                },
+                "additionalProperties": false
+              }
+            ]
+          }
+        }
+      },
+      "required": ["operator", "rules"],
+      "additionalProperties": false
+    },
+
+    "data_type": {
+      "queries": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "query": {
+              "type": "object",
+              "properties": {
+                "group": {
+                  "$ref": "#/definitions/group"
+                }
+              },
+              "additionalProperties": false
+            }
+          } 
+        }
+      },
+
+      "table_schema": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "rename": {
+              "type": "boolean"
+            }
+          },
+          "required": ["name", "type"]
+        }
+      }
+
+    }
+  }
+}
