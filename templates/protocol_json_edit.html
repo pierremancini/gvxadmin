@@ -1,12 +1,7 @@
 {% extends 'admin/model/edit.html' %}
 
-{% block body %}
-
-    {{ super() }}
-
-
-<!--     <script src="{{ url_for('static', filename='graphic/js/jsoneditor.js') }}"></script> -->
-
+{% block tail %}
+  {{ super() }}
 
     <link rel="stylesheet" href="{{ url_for('static', filename='code/css/jsoneditor.css') }}">
 
@@ -32,52 +27,24 @@
 
     <script>
 
-      var schema = {
-        "title": "Example Schema",
-        "type": "object",
-        "properties": {
-          "firstName": {
-            "type": "string"
-          },
-          "lastName": {
-            "type": "string"
-          },
-          "gender": {
-            "enum": ["male", "female"]
-          },
-          "age": {
-            "description": "Age in years",
-            "type": "integer",
-            "minimum": 0
-          },
-          "job": {
-            "$ref": "job"
-          }
-        },
-        "required": ["firstName", "lastName", "gender"]
-      };
+      var schema;
+      var group;
 
-      var job = {
-        "title": "Job description",
-        "type": "object",
-        "properties": {
-          "company": {
-            "type": "string"
-          },
-          "role": {
-            "type": "string"
-          }
+      $.ajax({
+        url: "{{ url_for('static', filename='code/js/schema/config_schema.json') }}",
+        dataType: 'json',
+        async: false,
+        success: function(data) {
+          schema = data;
         }
-      };
+      });
 
       function updateConfigField() {
         document.getElementById('config_json').value = editor.getText();
-
       }
 
       var options = {
         schema: schema,
-        schemaRefs: {"job": job},
         onChange: updateConfigField
       };
 
@@ -86,21 +53,17 @@
       var json = JSON.parse(document.getElementById('config_json').value);
 
       var editor = new JSONEditor(container, options, json);
-      editor.setName('Config JSON')
-
+      editor.setName('Config JSON');
 
       document.getElementById('config_json').addEventListener('keyup', updateEditor);
 
       function updateEditor() {
 
-        console.log('appel')
         editor.set(JSON.parse(document.getElementById('config_json').value));
 
       }
 
-
-
-
     </script>
 
 {% endblock %}
+
