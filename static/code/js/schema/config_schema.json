@@ -1,7 +1,6 @@
 {
   "title": "Protocol configuration",
   "type": "object",
-  "additionalProperties": false,
   "required": ["caseData_url",
     "columns_order", 
     "custom_sort",
@@ -390,7 +389,7 @@
         "type": "array",
         "items": {
           "name": {
-            "type": "string",
+            "type": "string"
           },
           "columns": {
             "type": "array",
@@ -445,7 +444,8 @@
               },
               "additionalProperties": false
             }
-          } 
+          },
+          "additionalProperties": false 
         }
       },
 
@@ -469,5 +469,6 @@
       }
 
     }
-  }
+  },
+  "additionalProperties": false
 }
