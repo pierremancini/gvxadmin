@@ -3,7 +3,7 @@
 {% block tail %}
   {{ super() }}
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='code/css/jsoneditor.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/jsoneditor/dist/jsoneditor.min.css') }}">
 
     <style type="text/css">
 
@@ -23,7 +23,7 @@
 
     </style>
 
-    <script src="{{ url_for('static', filename='code/js/jsoneditor.js') }}"></script>
+    <script src="{{ url_for('static', filename='node_modules/jsoneditor/dist/jsoneditor.min.js') }}"></script>
 
     <script>
 
@@ -31,7 +31,7 @@
       var group;
 
       $.ajax({
-        url: "{{ url_for('static', filename='code/js/schema/config_schema.json') }}",
+        url: "{{ url_for('static', filename='schema/config_schema.json') }}",
         dataType: 'json',
         async: false,
         success: function(data) {

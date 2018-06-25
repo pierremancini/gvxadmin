@@ -45,6 +45,7 @@
           "$ref": "#/definitions/data_type/columns_order"
         }
       },
+      "required": ["qc", "var"],
       "additionalProperties": false
     },
     "custom_sort": {

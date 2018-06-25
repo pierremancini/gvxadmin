@@ -17,17 +17,16 @@ Manage:
 pip install -r requirements.txt
 ```
 
-- From [JSON editor](https://github.com/josdejong/jsoneditor) get jsoneditor-icons.svg, jsoneditor.css, jsoneditor.js files and put them in static folder as :
+- Install [JSON editor](https://github.com/josdejong/jsoneditor):
 
+```bash
+npm init
+```
 
-``` bash
-/static/
-|-- css
-|   |-- img
-|   |   |-- jsoneditor-icons.svg
-|   |-- jsoneditor.css
-|-- js
-|   |-- jsoneditor.js
+Default default prompts can be accepted.
+
+```bash
+npm install jsoneditor
 ```
 
 ## Configuration
