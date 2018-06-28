@@ -39,8 +39,33 @@
         }
       });
 
+      // Disable save buttons while JSON doesn't validate
+      function updateButtons() {
+
+        $.each($(".btn"), function (key, item) {
+          if (editor.validateSchema.errors != null) {
+            item.disabled = true;
+            $("#save-msg").show();
+          } else {
+            item.disabled = false;
+            $("#save-msg").hide();
+          }
+        });
+      }
+      $(document).ready(updateButtons);
+
+      // div with explaining why user can not save his modificaitons
+      $("<div id='save-msg' class='alert alert-error' style='display: none;'>Only valid JSON can be saved</div>").insertBefore($(".btn-primary"));
+
+      // Double binding
       function updateConfigField() {
         document.getElementById('config_json').value = editor.getText();
+        console.log('updateConfigField');
+        setTimeout(updateButtons, 200);
+      }
+
+      function updateEditor() {
+        editor.set(JSON.parse(document.getElementById('config_json').value));
       }
 
       var options = {
@@ -49,19 +74,12 @@
       };
 
       var container = document.getElementById('config_json').parentNode;
-
       var json = JSON.parse(document.getElementById('config_json').value);
 
       var editor = new JSONEditor(container, options, json);
       editor.setName('Config JSON');
 
       document.getElementById('config_json').addEventListener('keyup', updateEditor);
-
-      function updateEditor() {
-
-        editor.set(JSON.parse(document.getElementById('config_json').value));
-
-      }
 
     </script>
 
