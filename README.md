@@ -23,7 +23,7 @@ pip install -r requirements.txt
 npm init
 ```
 
-Default default prompts can be accepted.
+Default prompts can be accepted.
 
 ```bash
 npm install jsoneditor
