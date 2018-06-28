@@ -17,6 +17,8 @@ Manage:
 pip install -r requirements.txt
 ```
 
+## Installations
+
 - Install [JSON editor](https://github.com/josdejong/jsoneditor):
 
 ```bash
@@ -27,6 +29,16 @@ Default prompts can be accepted.
 
 ```bash
 npm install jsoneditor
+```
+
+### Get alternate version of JSONeditor
+
+The Release v5.18.0 has a bug [JSON editor](https://github.com/josdejong/jsoneditor/issues/544).
+
+To get version in developpement we can install JSONeditor with:
+
+```bash
+npm install https://github.com/josdejong/jsoneditor.git#develop
 ```
 
 ## Configuration
