@@ -5,6 +5,7 @@
     "columns_order", 
     "custom_sort",
     "default_work_env",
+    "publish_name_template",
     "publish_name_date_format",
     "data_session_url",
     "data_files_url",
