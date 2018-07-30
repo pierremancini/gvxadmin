@@ -77,6 +77,14 @@
       "additionalProperties": false
     },
 
+    "import_rename_regex": {
+      "type": "string"
+    },
+
+    "import_rename_sep":{
+      "type": "string"
+    },
+
     "publish_name_template": {
       "type": "string"
     },
