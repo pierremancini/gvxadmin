@@ -1,0 +1,196 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Protocol configuration",
+  "type": "object",
+  "properties": {
+    "caseData_url": {
+      "type": "string"
+    },
+    "columns_order": {
+      "type": "object",
+      "properties": {
+      },
+      "additionalProperties": { "type": "array" }
+    },
+    "custom_sort": {
+      "type": "object",
+      "properties": {
+      },
+      "additionalProperties": { "type": "array" }
+    },
+    "default_work_env": {
+      "type": "object",
+      "properties": {
+      },
+      "additionalProperties": { "type": "string" }
+    },
+    "publish_name_template": {
+      "type": "string"
+    },
+    "publish_name_date_format": {
+      "type": "string"
+    },
+    "data_session_url": {
+      "type": "string"
+    },
+    "data_files_url": {
+      "type": "string"
+    },
+    "data_files_url_parametric": {
+      "type": "integer"
+    },
+    "data_types_suffix": {
+      "type": "object",
+      "properties": {
+      },
+      "additionalProperties": { "type": "string" }
+    },
+    "entry_point": {
+      "type": "string"
+    },
+
+    "editable_fields": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "label": {"type": "string"},
+            "name": {"type": "string"},
+            "options": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "string"
+                  },
+                  "label": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "flag_fields": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "object"
+        }
+    },
+    "linked_data": {
+      "type": "object",
+      "additionalProperties": { 
+        "type": "object",
+        "properties": {
+          "link_fields": {
+            "type": "array"
+          },
+          "table_name_format": {
+            "type": "string"
+          },
+          "graph_display_default": {
+            "type": "boolean" 
+          },
+          "graph_name_format": {
+            "type": "string"
+          }
+        }
+      }
+    },
+
+    "queries": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "query": {
+              "$ref": "group"
+            }
+          }
+        }
+      }
+    },
+    "filters": {
+    },
+    "col_views": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "columns": {
+              "type": "array"
+            }
+          }
+        }
+      }
+    },
+    "col_map": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "table_schema": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "additionalProperties": {
+            "type": ["string", "boolean"]
+          }
+        }
+      }
+    },
+    "work_envs": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": ["string", "null"]
+            },
+            "query": {
+              "type": ["string", "null"]
+            },
+            "sort": {
+              "type": ["array", "null"]
+            },
+            "view": {
+              "type": ["string", "null"]
+            }
+          }
+        }
+      }
+    },
+    "col_classes": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "className": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

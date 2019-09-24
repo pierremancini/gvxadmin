@@ -3,7 +3,7 @@
 {% block tail %}
   {{ super() }}
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/jsoneditor/dist/jsoneditor.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/jsoneditor/dist/jsoneditor.css') }}">
 
     <style type="text/css">
 
@@ -23,7 +23,7 @@
 
     </style>
 
-    <script src="{{ url_for('static', filename='node_modules/jsoneditor/dist/jsoneditor.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='node_modules/jsoneditor/dist/jsoneditor.custom.js') }}"></script>
 
     <script>
 

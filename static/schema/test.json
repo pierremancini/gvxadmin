@@ -1,0 +1,23 @@
+{
+  "title": "Protocol configuration test",
+  "type": "object",
+
+
+  "properties": {
+    "trade": {
+      "type": "object",
+      "properties": {
+        "eee": {
+          "type":"string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "crabe": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "required": ["trade", "crabe"]
+
+}

@@ -1,0 +1,38 @@
+# HG changeset patch
+# User shelve@localhost
+# Date 1527752225 -7200
+#      Thu May 31 09:37:05 2018 +0200
+# Node ID b52ac96688876f7c21665b27eb86bed37d44e2a0
+# Parent  12685387e7456ba7e119f522cbf22f653515b633
+changes to: Update README
+
+diff --git a/gvx_admin.py b/gvx_admin.py
+--- a/gvx_admin.py
++++ b/gvx_admin.py
+@@ -43,7 +43,7 @@
+         'samples': 'sqlite:///gvx_samples_catalog.sqlite'
+     }
+     HTML_TEMPLATE_PATH = ''
+-    JSON_CONFIG_PATH = ''
++    JSON_CONFIG_PATH = '/home/pmancini/Code/gvxadmin/data'
+     BAM_FILES_PATH = ''
+     EXPORT_PATH = ''
+     LINKED_DATA_PATH = ''
+@@ -126,6 +126,9 @@
+     #def action_copy(self, ids):
+         #print(ids)
+ 
++    edit_template = 'protocol_json_edit.html'
++
++
+     form_create_rules = ('name', 'users', 'config_source', 'template_source')
+     form_edit_rules = ('name', 'users', 'config_json', 'template_qc', 'template_var', 'template_cst', 'template_cnv', 'template_fus')
+ 
+@@ -233,7 +236,6 @@
+ 
+         # TODO: Manage absent table : OperationalError: (sqlite3.OperationalError) no such table: SARC3-001H_CNV [SQL: u'\nDROP TABLE "SARC3-001H_CNV"']
+ 
+-
+ admin = Admin(app, name='GVX Admin', template_mode='bootstrap2')
+ admin.add_view(ModelView(User, db.session))
+ admin.add_view(ProtocolModelView(Protocol, db.session))

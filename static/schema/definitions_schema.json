@@ -1,0 +1,194 @@
+{
+  "definitions": {
+    "group": {
+      "type": "object",
+      "properties": {
+        "operator": {
+          "type": "string"
+        },
+        "rules": {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "condition": {
+                    "type": "string",
+                    "enum": ["eq", "ne", "le", "lt", "ge", "gt", "lk", "nl", "in", "ni"]
+                  },
+                  "field": {
+                    "type": "string"
+                  },
+                  "data": {
+                    "type": ["string", "null"]
+                  }
+                },
+                "required": ["condition", "field", "data"],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "group": {
+                      "$ref": "#/definitions/group"
+                    }
+                },
+                "additionalProperties": false
+              }
+            ]
+          }
+        }
+      },
+      "required": ["operator", "rules"],
+      "additionalProperties": false
+    },
+
+    "data_type": {
+
+      "columns_order": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+
+      "default_work_env": {
+        "type": "string"
+      },
+
+      "editable_fields": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "label": {"type": "string"},
+            "name": {"type": "string"},
+            "options": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "string"
+                  },
+                  "label": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+
+      "flag_fields": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      },
+
+      "linked_data": {
+        "type": "object",
+        "properties": {
+          "link_fields": {
+            "type": "array"
+          },
+          "table_name_format": {
+            "type": "string"
+          },
+          "graph_display_default": {
+            "type": "boolean" 
+          },
+          "graph_name_format": {
+            "type": "string"
+          }
+        }
+      },
+
+      "col_views": {
+        "type": "array",
+        "items": {
+          "name": {
+            "type": "string",
+          },
+          "columns": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+
+      "work_envs": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": ["string", "null"]
+            },
+            "query": {
+              "type": ["string", "null"]
+            },
+            "sort": {
+              "type": ["array", "null"],
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": ["string", "integer"]
+                }
+              }
+            },
+            "view": {
+              "type": ["string", "null"]
+            }
+          }
+        }
+      },
+
+      "queries": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "query": {
+              "type": "object",
+              "properties": {
+                "group": {
+                  "$ref": "#/definitions/group"
+                }
+              },
+              "additionalProperties": false
+            }
+          } 
+        }
+      },
+
+      "table_schema": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "rename": {
+              "type": "boolean"
+            }
+          },
+          "required": ["name", "type"]
+        }
+      }
+
+    }
+  }
+}

@@ -1,0 +1,9 @@
+*.log
+*.py[cod]
+data/
+*.min.js*
+*.min.css*
+static/node_modules/
+.hgignore
+gvx_samples_catalog.sqlite
+gvx_users.sqlite

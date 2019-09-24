@@ -1,0 +1,15 @@
+data/templates/protocol_json_edit_graphic.html.i
+data/static/code/css/jsoneditor.css.i
+data/static/code/css/img/jsoneditor-icons.svg.i
+data/static/code/js/schema/config_schema.json.i
+data/static/graphic/js/jsoneditor.js.i
+data/static/code/img/jsoneditor-icons.svg.i
+data/.hgignore.i
+data/schema/config_schema.json.i
+data/templates/protocol_json_edit.html.i
+data/requirements.txt.i
+data/admin/index.html.i
+data/static/code/js/jsoneditor.js.d
+data/static/code/js/jsoneditor.js.i
+data/README.md.i
+data/gvx_admin.py.i
